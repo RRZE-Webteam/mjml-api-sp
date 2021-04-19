@@ -1,0 +1,10 @@
+DirectoryIndex index.php
+
+# enable apache rewrite engine
+RewriteEngine on
+
+# set rewrite base
+RewriteBase /
+ 
+# Push every request to index.php
+RewriteRule ^(.*)$ index.php [QSA]
