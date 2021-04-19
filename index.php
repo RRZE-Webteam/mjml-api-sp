@@ -1,6 +1,6 @@
 <?php
 
-namespace RRZE\Mjml;
+namespace RRZE\MJML;
 
 require __DIR__ . '/vendor/autoload.php';
 
