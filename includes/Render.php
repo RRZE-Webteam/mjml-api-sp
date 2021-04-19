@@ -1,6 +1,6 @@
 <?php
 
-namespace RRZE\Mjml;
+namespace RRZE\MJML;
 
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use Symfony\Component\Process\Process;
