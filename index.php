@@ -5,7 +5,7 @@ namespace RRZE\MJML;
 require __DIR__ . '/vendor/autoload.php';
 
 Router::add('/', function () {
-    echo 'RRZE Mjml Server';
+    echo 'RRZE MJML Server';
 });
 
 Router::add('/v1', function () {
