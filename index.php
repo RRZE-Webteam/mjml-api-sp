@@ -10,7 +10,6 @@ Router::add('/', function () {
 
 Router::add('/v1', function () {
     $bin = __DIR__ . '/node_modules/.bin/mjml';
-    $cacheDir = __DIR__ . '/cache';
     (new Render($bin))->run();
 }, 'post');
 
