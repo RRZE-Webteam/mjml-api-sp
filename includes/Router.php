@@ -1,6 +1,6 @@
 <?php
 
-namespace RRZE\Mjml;
+namespace RRZE\MJML;
 
 class Router
 {
