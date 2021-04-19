@@ -1,0 +1,19 @@
+{
+    "name": "rrze/mjml-server",
+    "type": "library",
+    "authors": [
+        {
+            "name": "RRZE-Webteam",
+            "email": "webmaster@fau.de"
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "symfony/process": "^5.2.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "RRZE\\Mjml\\" : "includes/"
+        }
+    }
+}
