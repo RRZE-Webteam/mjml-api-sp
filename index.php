@@ -29,8 +29,8 @@ require __DIR__ . '/vendor/autoload.php';
 $log = new Logger('RRZE-MJML');
 $log->pushHandler(new StreamHandler(LOG . '/error.log', Logger::ERROR));
 
-$configSample = dirname(__FILE__) . '/config-sample.php';
-$config = dirname(__FILE__) . '/config.php';
+$configSample = __DIR__ . '/config-sample.php';
+$config = __DIR__ . '/config.php';
 if (!file_exists($config)) {
     if (!copy($configSample, $config)) {
         $log->error('Cannot config-sample.php file to config.php file.', ['config file' => $config]);
