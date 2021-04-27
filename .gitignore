@@ -2,7 +2,10 @@
 composer.lock
 package-lock.json
 vendor
+node
 node_modules
+config.php
+log
 cache
 output.html
 _tmp
