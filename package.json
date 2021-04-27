@@ -8,6 +8,6 @@
     "author": "",
     "license": "GPL-2.0-or-later",
     "dependencies": {
-        "mjml": "^4.9.0"
+        "mjml": "^4.9.1"
     }
 }
