@@ -9,8 +9,9 @@ Router::add('/', function () {
 });
 
 Router::add('/v1', function () {
-    $bin = __DIR__ . '/node_modules/.bin/mjml';
-    (new Render($bin))->run();
+    $nodeBin = '';
+    $mjmlBin = __DIR__ . '/node_modules/.bin/mjml';
+    (new Render($nodeBin, $mjmlBin))->run();
 }, 'post');
 
 Router::run('/');
