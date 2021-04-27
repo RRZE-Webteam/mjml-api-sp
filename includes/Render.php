@@ -9,11 +9,14 @@ class Render
 {
     private $httpRequest;
 
-    protected $bin;
+    protected $nodeBin;
 
-    public function __construct(string $bin)
+    protected $mjmlBin;
+
+    public function __construct(string $nodeBin, string $mjmlBin)
     {
-        $this->bin = $bin;
+        $this->nodeBin = $nodeBin;
+        $this->mjmlBin = $mjmlBin;
         $this->httpRequest = new HttpRequest();
     }
 
@@ -29,7 +32,8 @@ class Render
     protected function render(string $content): string
     {
         $args = [
-            $this->bin,
+            $this->nodeBin,
+            $this->mjmlBin,
             '-i',
             '-s',
             '--config.beautify'
