@@ -8,7 +8,7 @@ Router::add('/', function () {
     echo 'MJML API Service Provider';
 });
 
-Router::add('/v1', function () {
+Router::add('/v1/render', function () {
     $nodeBin = '';
     $mjmlBin = __DIR__ . '/node_modules/.bin/mjml';
     (new Render($nodeBin, $mjmlBin))->run();
