@@ -13,6 +13,5 @@ npm install
 ```shell script
 curl -X POST -H "Content-Type: application/json" \
     -d '{"mjml":"<mjml><mj-body><mj-section><mj-column><mj-text>Hello World!</mj-text></mj-column></mj-section></mj-body></mjml>"}' \
-    --insecure https://mjml-api-sp-url/v1 \
-    >> output.html
+    https://mjml-api-sp-url/v1
 ```
