@@ -3,3 +3,6 @@ composer.lock
 package-lock.json
 vendor
 node_modules
+cache
+output.html
+_tmp
