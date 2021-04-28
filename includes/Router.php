@@ -82,8 +82,8 @@ class Router
                             array_shift($matches);
                         }
 
-                        if ($return_value = call_user_func_array($route['function'], $matches)) {
-                            echo $return_value;
+                        if ($returnValue = call_user_func_array($route['function'], $matches)) {
+                            echo $returnValue;
                         }
 
                         $routeMatchFound = true;
