@@ -39,8 +39,6 @@ if (!file_exists($config)) {
 }
 require $config;
 
-$log->error('Cannot config-sample.php file to config.php file.', ['config file' => $config]);
-
 $rotate = new Rotate(LOG_DIR . '/*.log');
 $rotate->size('1MB');
 $rotate->run();
