@@ -13,15 +13,14 @@ class Render
 
     protected $mjmlBin;
 
-    protected $httpRequest;
-
     protected $log;
+
+    protected $error;
 
     public function __construct(string $nodeBin, string $mjmlBin)
     {
         $this->nodeBin = $nodeBin;
         $this->mjmlBin = $mjmlBin;
-        $this->httpRequest = new HttpRequest();
 
         $this->log = new Logger('RRZE-MJML');
         $this->log->pushHandler(new StreamHandler(LOG_DIR . '/error.log', Logger::ERROR));
@@ -29,11 +28,19 @@ class Render
 
     public function run(): void
     {
-        $body = $this->httpRequest->body();
-        $bodyObj = json_decode($body);
-        $content = $bodyObj->mjml;
-
-        echo $this->getCache($content);
+        $request = Request::json();
+        if (empty($request['mjml'])) {
+            $error = 'Invalid JSON or wrong parameters.';
+            $this->log->error($error);
+            echo Response::json(400, [
+                'error' => $error,
+                'mjml' => '',
+                'html' => ''
+            ]);
+        } else {
+            $content = $request['mjml'];
+            echo $this->getCache($content);
+        }
     }
 
     protected function getCache(string $content)
@@ -44,13 +51,32 @@ class Render
 
         if (is_file($output)) {
             $html = $this->read($output);
-            return json_encode([
+            return Response::json(200, [
+                'error' => '',
+                'mjml' => $content,
                 'html' => $this->stripFirstComment($html)
             ]);
         }
 
         $this->write($input, $content);
-        return $this->render($input, $output);
+
+        $html = $this->render($input, $output);
+
+        if ($html == '') {
+            $error = 'Unknow error.';
+            $this->log->error($error);
+            return Response::json(500, [
+                'error' => $error,
+                'mjml' => $content,
+                'html' => ''
+            ]);
+        }
+
+        return Response::json(200, [
+            'error' => '',
+            'mjml' => $content,
+            'html' => $this->stripFirstComment($html)
+        ]);
     }
 
     protected function render(string $input, string $output): string
@@ -78,9 +104,7 @@ class Render
             $html = $this->read($output);
         }
 
-        return json_encode([
-            'html' => $this->stripFirstComment($html)
-        ]);
+        return $html;
     }
 
     protected function stripFirstComment($html)
