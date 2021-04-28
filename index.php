@@ -11,7 +11,10 @@ const CACHE_DIR = __DIR__ . '/cache';
 
 const LOG_DIR = __DIR__ . '/log';
 
-date_default_timezone_set('UTC');
+if (!defined('DEFAULT_TIMEZONE')) {
+    define('DEFAULT_TIMEZONE', 'UTC');
+}
+date_default_timezone_set(DEFAULT_TIMEZONE);
 
 if (!is_dir(CACHE_DIR)) {
     mkdir(CACHE_DIR, 0_777, true);
