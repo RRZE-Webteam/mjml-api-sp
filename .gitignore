@@ -7,5 +7,3 @@ node_modules
 config.php
 log
 cache
-output.html
-_tmp
