@@ -42,25 +42,9 @@ Gibt ein JSON-Objekt zurück, das den gerenderten HTML-Code zusammen mit dem ver
 
 Das Senden von ungültigem JSON oder falschen Parametern gibt eine 400 Bad Request-Antwort zurück.
 
-```shell script
-{
-  "error": "string",
-  "html": "string",
-  "mjml": "string"
-}
-```
-
 **500 Internal Server Error**
 
 Wenn ein unbekannter Fehler auftritt, gibt die API eine Antwort auf 500 interne Fehler zurück.
-
-```shell script
-{
-  "error": "string",
-  "html": "string",
-  "mjml": "string"
-}
-```
 
 ## Installation
 
