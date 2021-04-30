@@ -1,9 +1,19 @@
-*.DS_Store
-composer.lock
+### vscode ###
+.vscode/
+### NetBeans ###
+**/nbproject/
+### PhpStorm ###
+.idea/
+### macOS ###
+.DS_Store
+### Node ###
+node_modules/
 package-lock.json
-vendor
-node
-node_modules
+### Composer ###
+composer.phar
+composer.lock
+/vendor/
+### Misc ###
 config.php
-log
-cache
+/log/
+/cache/
