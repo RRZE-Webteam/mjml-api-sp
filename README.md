@@ -1,14 +1,78 @@
-# mjml-api-sp
+# MJML API SP
+
 MJML API Service Provider
 
-### Installation
+## Beschreibung
+
+Die MJML-API bietet responsive E-Mails als Service.
+
+### Authentifizierung
+
+Keine Authentifizierung erforderlich.
+
+### PATH
+
+POST /render
+
+### Request Body
+
+Das MJML-Markup zum Konvertieren in responsives HTML (JSON).
+
+```shell script
+{
+  "mjml": "string"
+}
+```
+
+### Responses
+
+**200 OK**
+Gibt ein JSON-Objekt zurück, das den gerenderten HTML-Code zusammen mit dem verwendeten MJML-Markup enthält.
+
+```shell script
+{
+  "error": "string",
+  "html": "string",
+  "mjml": "string"
+}
+```
+
+**400 Bad Request**
+Das Senden von ungültigem JSON oder falschen Parametern gibt eine 400 Bad Request-Antwort zurück.
+
+```shell script
+{
+  "error": "string",
+  "html": "string",
+  "mjml": "string"
+}
+```
+
+**500 Internal Server Error**
+Wenn ein unbekannter Fehler auftritt, gibt die API eine Antwort auf 500 interne Fehler zurück.
+
+```shell script
+{
+  "error": "string",
+  "html": "string",
+  "mjml": "string"
+}
+```
+
+## Installation
 
 ```shell script
 composer install
 npm install
 ```
 
-### Test
+## Einstellungsdatei
+
+```shell script
+./config.php
+```
+
+## Test
 
 ```shell script
 curl -X POST -H "Content-Type: application/json" \
