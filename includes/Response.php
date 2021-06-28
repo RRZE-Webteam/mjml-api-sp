@@ -10,9 +10,8 @@ class Response
 
         http_response_code($code);
 
+        header('Content-Type: application/json; charset=utf-8');
         header('Cache-Control: no-transform,public,max-age=300,s-maxage=900');
-
-        header('Content-Type: application/json');
 
         $status = [
             200 => '200 OK',
@@ -22,6 +21,6 @@ class Response
 
         header('Status: ' . $status[$code]);
 
-        return json_encode($content);
+        return json_encode($content, JSON_UNESCAPED_UNICODE);
     }
 }
