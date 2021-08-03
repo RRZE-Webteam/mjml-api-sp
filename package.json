@@ -1,13 +1,11 @@
 {
     "name": "mjml-api-sp",
-    "version": "1.0.1",
-    "description": "",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "",
     "license": "GPL-2.0-or-later",
     "dependencies": {
-        "mjml": "^4.10.1"
+        "mjml": "^4.10.2"
     }
 }
