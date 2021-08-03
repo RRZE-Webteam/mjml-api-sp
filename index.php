@@ -1,5 +1,16 @@
 <?php
 
+/*
+API Name:    MJML SP
+URI:         https://github.com/RRZE-Webteam/mjml-api-sp
+Description: MJML API Service Provider.
+Version:     1.1.0
+Author:      RRZE-Webteam
+Author URI:  https://blogs.fau.de/webworking/
+License:     GNU General Public License Version 3
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+*/
+
 namespace RRZE\MJML;
 
 use Monolog\Logger;
