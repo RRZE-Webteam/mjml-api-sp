@@ -6,6 +6,6 @@
     "author": "",
     "license": "GPL-2.0-or-later",
     "dependencies": {
-        "mjml": "^4.10.2"
+        "mjml": "^4.10.4"
     }
 }
