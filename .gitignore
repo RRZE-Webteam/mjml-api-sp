@@ -8,12 +8,12 @@
 .DS_Store
 ### Node ###
 node_modules/
-package-lock.json
 ### Composer ###
 composer.phar
-composer.lock
 /vendor/
 ### Misc ###
 config.php
 /log/
 /cache/
+### Tmp ###
+_tmp/
