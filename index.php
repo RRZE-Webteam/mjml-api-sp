@@ -4,7 +4,7 @@
 API Name:    MJML SP
 URI:         https://github.com/RRZE-Webteam/mjml-api-sp
 Description: MJML API Service Provider.
-Version:     1.1.0
+Version:     1.1.1
 Author:      RRZE-Webteam
 Author URI:  https://blogs.fau.de/webworking/
 License:     GNU General Public License Version 3
